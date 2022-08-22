@@ -4,17 +4,28 @@ import { Fragment, useState } from 'react'
 const MobileHeaderBar = () => {
     const menu = [
         {
+            id: 1,
             name: "Giới thiệu"
         }, {
+            id: 2,
             name: "Danh mục",
             children: [
-                { name: "Guitar" },
-                { name: "Ukulele" },
-                { name: "Electric guitar" }
+                {
+                    id: 21,
+                    name: "Guitar"
+                }, {
+                    id: 22,
+                    name: "Ukulele"
+                }, {
+                    id: 23,
+                    name: "Electric guitar"
+                }
             ]
         }, {
+            id: 3,
             name: "Tin tức"
         }, {
+            id: 4,
             name: "Hỗ trợ"
         }
     ]
@@ -160,6 +171,7 @@ const MobileHeaderBar = () => {
                             <ul className="grid grid-cols-2">
                                 {menu.map((menuItem) => (
                                     <li
+                                        key={menuItem.id}
                                         className="text-center px-1.5 text-2lg col-span-1 py-2 uppercase"
                                     >
                                         <a href="#">{menuItem.name}</a>

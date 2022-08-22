@@ -5,17 +5,28 @@ const MenuBar = () => {
     const [enabled, setEnabled] = useState(false)
     const menu = [
         {
+            id: 1,
             name: "Giới thiệu"
         }, {
+            id: 2,
             name: "Danh mục",
             children: [
-                { name: "Guitar" },
-                { name: "Ukulele" },
-                { name: "Electric guitar" }
+                { 
+                    id: 21,
+                    name: "Guitar" 
+                },{ 
+                    id: 22,
+                    name: "Ukulele" 
+                },{ 
+                    id: 23,
+                    name: "Electric guitar" 
+                }
             ]
         }, {
+            id: 3,
             name: "Tin tức"
         }, {
+            id: 4,
             name: "Hỗ trợ"
         }
     ]
@@ -38,6 +49,7 @@ const MenuBar = () => {
                 {menu.map((menuItem) => (
                     <Menu
                         as="div"
+                        key={menuItem.id}
                         className="relative inline-block text-left w-fit group"
                     >
                         <div className="">
@@ -51,7 +63,7 @@ const MenuBar = () => {
                         <Transition show={true}>
                             <Menu.Items className="group-hover:ease-in rounded-md group-hover:block hidden absolute mt-0 w-max bg-red-700 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                 {menuItem.children?.map((child) => (
-                                    <div className={`px-1 py-1`}>
+                                    <div key={child.id} className={`px-1 py-1`}>
                                         <Menu.Item>
                                             <button className="text-white font-bold uppercase hover:bg-red-600 flex w-full items-center px-2 py-2 text-2xs">
                                                 {child.name}

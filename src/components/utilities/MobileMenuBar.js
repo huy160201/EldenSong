@@ -1,17 +1,28 @@
 const MobileMenuBar = () => {
     const menu = [
         {
+            id: 1,
             name: "Giới thiệu"
         }, {
+            id: 2,
             name: "Danh mục",
             children: [
-                { name: "Guitar" },
-                { name: "Ukulele" },
-                { name: "Electric guitar" }
+                { 
+                    id: 21,
+                    name: "Guitar" 
+                },{ 
+                    id: 22,
+                    name: "Ukulele" 
+                },{ 
+                    id: 23,
+                    name: "Electric guitar" 
+                }
             ]
         }, {
+            id: 3,
             name: "Tin tức"
         }, {
+            id: 4,
             name: "Hỗ trợ"
         }
     ]
@@ -31,6 +42,7 @@ const MobileMenuBar = () => {
                 </li>
                 {menu.map((menuItem) => (
                     <li
+                        key={menuItem.id}
                         className="whitespace-nowrap text-lg font-medium px-2 py-2"
                     >
                         {menuItem.name}
