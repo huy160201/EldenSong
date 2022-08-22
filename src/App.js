@@ -1,9 +1,11 @@
 import './App.css';
-import HeaderBar from './components/utilities/HeaderBar';
-import MenuBar from './components/utilities/MenuBar';
-import MobileHeaderBar from './components/utilities/MobileHeaderBar';
-import MobileMenuBar from './components/utilities/MobileMenuBar';
-import SocialButton from './components/utilities/SocialButton';
+import FooterBar from './components/utilities/footerBar';
+import HeaderBar from './components/utilities/headerBar';
+import MenuBar from './components/utilities/menuBar';
+import MobileHeaderBar from './components/utilities/mobileHeaderBar';
+import MobileMenuBar from './components/utilities/mobileMenuBar';
+import MobileFooterBar from './components/utilities/mobileFooterBar';
+import SocialButton from './components/utilities/socialButton';
 
 function App() {
   return (
@@ -33,6 +35,20 @@ function App() {
       <div className="bg-transparent w-screen md:hidden flex items-center justify-center">
         <div className={'max-w-6xl w-full px-4'}>
           <MobileMenuBar />
+        </div>
+      </div>
+
+      {/* Footer Component */}
+      <div className="bg-transparent w-screen hidden md:flex items-center justify-center">
+        <div className={'max-w-6xl w-full'}>
+          <FooterBar />
+        </div>
+      </div>
+
+      {/* Mobile Footer Bar Component */}
+      <div className="bg-transparent w-screen md:hidden flex items-center justify-center">
+        <div className={'max-w-6xl w-full'}>
+          <MobileFooterBar />
         </div>
       </div>
 
